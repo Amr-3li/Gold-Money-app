@@ -1,18 +1,36 @@
 part of 'gold_cubit.dart';
 
 @immutable
-sealed class GoldState {}
+sealed class GoldCurrencyState {}
 
-final class GoldInitial extends GoldState {}
+final class GoldCurrencyInitial extends GoldCurrencyState {}
 
-final class GoldLoading extends GoldState {}
+// get gold price ==================================================
 
-final class GoldLoaded extends GoldState {
-  final GoldModel gold;
+final class GoldLoading extends GoldCurrencyState {}
+
+final class GoldLoaded extends GoldCurrencyState {
+  final CurrencyModel gold;
 
   GoldLoaded(this.gold);
 }
-final class GoldError extends GoldState {
+
+final class GoldError extends GoldCurrencyState {
   final String error;
   GoldError(this.error);
+}
+
+//Get Currencies rate ===============================================
+
+final class CurrenciesLoading extends GoldCurrencyState {}
+
+final class CurrenciesLoaded extends GoldCurrencyState {
+  final CurrencyModel currencies;
+
+  CurrenciesLoaded(this.currencies);
+}
+
+final class CurrenciesError extends GoldCurrencyState {
+  final String error;
+  CurrenciesError(this.error);
 }
