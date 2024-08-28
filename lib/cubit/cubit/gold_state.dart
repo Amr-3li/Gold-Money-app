@@ -10,7 +10,7 @@ final class GoldCurrencyInitial extends GoldCurrencyState {}
 final class GoldLoading extends GoldCurrencyState {}
 
 final class GoldLoaded extends GoldCurrencyState {
-  final CurrencyModel gold;
+  final GoldModel gold;
 
   GoldLoaded(this.gold);
 }

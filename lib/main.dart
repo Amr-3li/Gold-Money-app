@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gold/data/wep_sevices/gold_wep_services.dart';
-import 'package:gold/presentation/home_page.dart';
+import 'package:gold/presentation/Pages/home_page.dart';
 
 void main() {
-  GoldWepServices().getCurrenciesRate();
+  GoldWepServices().getGoldPrice();
   runApp(const MyApp());
 }
 
