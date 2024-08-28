@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gold/Consts/home_list.dart';
+import 'package:gold/presentation/widgets/home/home_grid_item.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});
@@ -9,7 +10,7 @@ class HomeBody extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         image: const DecorationImage(
-            image: AssetImage("assets/Images/goldimage.jpg"),
+            image: AssetImage("assets/Images/gray-gold.jpg"),
             fit: BoxFit.fill,
             opacity: 0.7),
         gradient: LinearGradient(
@@ -39,33 +40,6 @@ class HomeBody extends StatelessWidget {
             },
           ),
         ],
-      ),
-    );
-  }
-}
-
-class HomeGridItem extends StatelessWidget {
-  const HomeGridItem({
-    super.key,
-    required this.item,
-  });
-  final Map<String, dynamic> item;
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: item['route'],
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: Colors.black, width: 2),
-          color: Colors.amber.withOpacity(0.5),
-        ),
-        child: Column(
-          children: [
-            Image.asset(item['image'], height: 100, width: 100),
-            Text(item['title'], textAlign: TextAlign.center),
-          ],
-        ),
       ),
     );
   }

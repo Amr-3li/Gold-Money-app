@@ -8,7 +8,8 @@ class HomeAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      shadowColor: const Color.fromARGB(255, 151, 101, 2),
+      shadowColor: const Color.fromARGB(255, 172, 115, 0),
+      backgroundColor: Color.fromARGB(255, 32, 32, 32),
       elevation: 15,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
@@ -18,7 +19,7 @@ class HomeAppBar extends StatelessWidget {
       title: const Text(
         'Gold',
         style: TextStyle(
-            color: Color.fromARGB(255, 151, 101, 2),
+            color: Color.fromARGB(255, 185, 123, 0),
             fontWeight: FontWeight.bold,
             fontSize: 30),
       ),

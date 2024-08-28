@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gold/data/wep_sevices/gold_wep_services.dart';
 import 'package:gold/presentation/Pages/home_page.dart';
+import 'package:gold/presentation/bottom_navigation_bar.dart';
 
 void main() {
   GoldWepServices().getGoldPrice();
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: BottomNavigationBarWidget(),
     );
   }
 }
