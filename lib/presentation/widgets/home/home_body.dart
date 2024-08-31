@@ -1,44 +1,66 @@
 import 'package:flutter/material.dart';
-import 'package:gold/Consts/home_list.dart';
-import 'package:gold/presentation/widgets/home/home_grid_item.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gold/cubit/currencies/currencies_cubit.dart';
+import 'package:gold/cubit/gold/gold_cubit.dart';
+import 'package:gold/presentation/widgets/home/home_currencies_data.dart';
+import 'package:gold/presentation/widgets/home/home_gold_data.dart';
+import 'package:gold/presentation/widgets/home/home_gridview.dart';
 
-class HomeBody extends StatelessWidget {
+class HomeBody extends StatefulWidget {
   const HomeBody({super.key});
 
   @override
+  State<HomeBody> createState() => _HomeBodyState();
+}
+
+class _HomeBodyState extends State<HomeBody> {
+  @override
+  void initState() {
+    super.initState();
+
+    getCurrenciesData();
+    getGoldData();
+  }
+
+  void getGoldData() async {
+    await BlocProvider.of<GoldCubit>(context).getGoldPrice();
+  }
+
+  void getCurrenciesData() async {
+    await BlocProvider.of<CurrenciesCubit>(context).getCurrencies();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        image: const DecorationImage(
-            image: AssetImage("assets/Images/gray-gold.jpg"),
-            fit: BoxFit.fill,
-            opacity: 0.7),
-        gradient: LinearGradient(
-          colors: [
-            const Color.fromARGB(255, 151, 101, 2).withOpacity(0.9),
-            const Color.fromARGB(255, 255, 255, 255).withOpacity(0.9),
-          ],
-          stops: const [0.1, 0.9],
-          begin: Alignment.bottomLeft,
-          end: Alignment.topRight,
-        ),
-      ),
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(20),
+      scrollDirection: Axis.vertical,
+      physics: const BouncingScrollPhysics(),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          GridView.builder(
-            padding: const EdgeInsets.all(20),
-            shrinkWrap: true,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            width: double.infinity,
+            child: Expanded(
+              child: Text(
+                "hello , welcome to gold price app",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: const Color.fromARGB(255, 9, 241, 0).withOpacity(0.4),
+                ),
+                overflow: TextOverflow.ellipsis,
+                maxLines: 3,
+              ),
             ),
-            itemCount: 4,
-            itemBuilder: (BuildContext context, int index) {
-              return HomeGridItem(item: homeList[index]);
-            },
           ),
+          const SizedBox(height: 20),
+          const HomeGolddata(),
+          const SizedBox(height: 20),
+          const HomeCurrenciesData(),
+          const SizedBox(height: 20),
+          const HomeGrideView(),
         ],
       ),
     );

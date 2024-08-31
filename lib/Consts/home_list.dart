@@ -1,21 +1,21 @@
 List<Map<String, dynamic>> homeList = [
   {
-    "title": "العملات",
+    "title": "Currencies",
     "route": () {},
     "icon": "assets/Images/convert.png",
   },
   {
-    "title": "الذهب",
+    "title": "Gold Price",
     "route": () {},
     "icon": "assets/Images/gold.png",
   },
   {
-    "title": "حساب الزكاه ",
+    "title": "Zakah Calculator",
     "route": () {},
     "icon": "assets/Images/calculations.png",
   },
   {
-    "title": "حساب السبائك",
+    "title": "Gold Bars",
     "route": () {},
     "icon": "assets/Images/gold-bars.png",
   },

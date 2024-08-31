@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gold/data/wep_sevices/gold_wep_services.dart';
-import 'package:gold/presentation/Pages/home_page.dart';
 import 'package:gold/presentation/bottom_navigation_bar.dart';
 
 void main() {
@@ -14,10 +13,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      
       title: 'Flutter Demo',
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        fontFamily: "jost"
+      ),
+      
       debugShowCheckedModeBanner: false,
-      home: BottomNavigationBarWidget(),
+      home: const BottomNavigationBarWidget(),
     );
   }
 }

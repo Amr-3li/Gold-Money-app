@@ -3,7 +3,7 @@
 class CurrencyModel {
   final String base;
   final Currencies results;
-  final String updated;
+  final DateTime updated;
 
   CurrencyModel({
     required this.base,
@@ -15,7 +15,7 @@ class CurrencyModel {
     return CurrencyModel(
       base: json['base'],
       results: Currencies.fromJson(json['results']),
-      updated:json['updated'],
+      updated: DateTime.parse(json['updated']),
     );
   }
 }

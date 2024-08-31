@@ -14,7 +14,7 @@ class HomeGridItem extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           border: Border.all(color: Colors.black, width: 2),
-          color: const Color.fromARGB(255, 148, 94, 1).withOpacity(0.7),
+          color: const Color.fromARGB(255, 148, 94, 1).withOpacity(0.5),
         ),
         child: Column(
           children: [
@@ -29,9 +29,9 @@ class HomeGridItem extends StatelessWidget {
             Text(
               item['title'],
               style: const TextStyle(
-                  color: Color.fromARGB(255, 255, 253, 250),
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold),
+                color: Color.fromARGB(255, 255, 253, 250),
+                fontSize: 15,
+              ),
             ),
             const Spacer(flex: 1),
           ],

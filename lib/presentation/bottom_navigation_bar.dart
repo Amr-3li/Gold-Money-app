@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:gold/cubit/currencies/currencies_cubit.dart';
+import 'package:gold/cubit/gold/gold_cubit.dart';
+import 'package:gold/data/repository/gold_repo.dart';
+import 'package:gold/data/wep_sevices/gold_wep_services.dart';
 import 'package:gold/presentation/Pages/currencies_price.dart';
 import 'package:gold/presentation/Pages/gold_price.dart';
 import 'package:gold/presentation/Pages/home_page.dart';
 import 'package:gold/presentation/Pages/zakah_calculator.dart';
+import 'package:gold/presentation/widgets/bottom_navigation_widget.dart';
 import 'package:gold/presentation/widgets/home/home_appbar.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class BottomNavigationBarWidget extends StatefulWidget {
   const BottomNavigationBarWidget({super.key});
@@ -41,53 +47,20 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
     return Scaffold(
       appBar: const PreferredSize(
           preferredSize: Size.fromHeight(60), child: HomeAppBar()),
-      body: _widgetOptions[_selectedIndex],
-      bottomNavigationBar: bottomNavigationWidget(),
-    );
-  }
-
-  Container bottomNavigationWidget() {
-    return Container(
-      color: const Color.fromARGB(255, 32, 32, 32),
-      height: 60,
-      child: Align(
-        alignment: AlignmentDirectional.bottomCenter,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: GNav(
-            selectedIndex: _selectedIndex,
-            onTabChange: onItemTapped,
-            tabBorderRadius: 30,
-            gap: 5,
-            tabActiveBorder: Border.all(
-                color: const Color.fromARGB(255, 188, 120, 1), width: 3),
-            rippleColor: const Color.fromARGB(255, 244, 154, 0),
-            activeColor: const Color.fromARGB(255, 164, 104, 0),
-            color: const Color.fromARGB(255, 162, 81, 0).withOpacity(0.6),
-            backgroundColor: const Color.fromARGB(255, 32, 32, 32),
-            iconSize: 24,
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 12),
-            tabs: const [
-              GButton(
-                  icon: Icons.home,
-                  text: 'Home',
-                  textColor: Color.fromARGB(255, 255, 162, 0)),
-              GButton(
-                icon: Icons.attach_money_rounded,
-                text: 'gold price',
-                textColor: Color.fromARGB(255, 255, 162, 0),
-              ),
-              GButton(
-                  icon: Icons.currency_exchange,
-                  text: 'Currencies price',
-                  textColor: Color.fromARGB(255, 255, 162, 0)),
-              GButton(
-                  icon: Icons.calculate,
-                  text: 'Zakah Calculator',
-                  textColor: Color.fromARGB(255, 255, 162, 0)),
-            ],
-          ),
-        ),
+      body: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+              create: (context) =>
+                  CurrenciesCubit(GoldRepository(GoldWepServices()))),
+          BlocProvider(
+              create: (context) =>
+                  GoldCubit(GoldRepository(GoldWepServices()))),
+        ],
+        child: _widgetOptions[_selectedIndex],
+      ),
+      bottomNavigationBar: BottomNavigationWidget(
+        onItemTapped: onItemTapped,
+        selectedIndex: _selectedIndex,
       ),
     );
   }

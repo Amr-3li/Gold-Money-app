@@ -4,18 +4,16 @@ import 'package:gold/data/wep_sevices/gold_wep_services.dart';
 
 class GoldRepository {
   GoldWepServices goldWepServices;
-  GoldRepository({required this.goldWepServices});
+  GoldRepository(this.goldWepServices);
   Future<CurrencyModel> getCurrenciesRate() async {
-    final response = await goldWepServices.getCurrenciesRate();
-    CurrencyModel gold = response.data.then((value) => CurrencyModel.fromJson(value));
-    return gold;
+     final response = await goldWepServices.getCurrenciesRate();
+    CurrencyModel currency = CurrencyModel.fromJson(response.data);
+    return currency;
   }
 
   Future<GoldModel> getGoldPrice() async {
     final response = await goldWepServices.getGoldPrice();
-    GoldModel gold = response.data.then((value) => GoldModel.fromJson(value));
+    GoldModel gold = GoldModel.fromJson(response.data);
     return gold;
   }
 }
-
-
