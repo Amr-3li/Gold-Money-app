@@ -9,7 +9,6 @@ import 'package:gold/presentation/Pages/home_page.dart';
 import 'package:gold/presentation/Pages/zakah_calculator.dart';
 import 'package:gold/presentation/widgets/bottom_navigation_widget.dart';
 import 'package:gold/presentation/widgets/home/home_appbar.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class BottomNavigationBarWidget extends StatefulWidget {
@@ -39,7 +38,7 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
     const HomePage(),
     const GoldPrice(),
     const CurrenciesPrice(),
-    const ZakahCalculator()
+    
   ];
 
   @override

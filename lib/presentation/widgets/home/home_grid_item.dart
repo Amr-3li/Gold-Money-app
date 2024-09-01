@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 
-class HomeGridItem extends StatelessWidget {
-  const HomeGridItem({
+class HomeItemPage extends StatelessWidget {
+  const HomeItemPage({
     super.key,
-    required this.item,
+    required this.image,
+    required this.title,
+    required this.route,
   });
-  final Map<String, dynamic> item;
+  final String image, title;
+  final Function() route;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: item['route'],
+      onTap: route,
       child: Container(
+        width: double.infinity,
+        height: 200,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           border: Border.all(color: Colors.black, width: 2),
@@ -20,14 +25,14 @@ class HomeGridItem extends StatelessWidget {
           children: [
             const Spacer(flex: 1),
             Image.asset(
-              item['icon'],
+              image,
               height: 70,
               width: 70,
               color: const Color.fromARGB(255, 255, 253, 250),
             ),
             const Spacer(flex: 1),
             Text(
-              item['title'],
+              title,
               style: const TextStyle(
                 color: Color.fromARGB(255, 255, 253, 250),
                 fontSize: 15,

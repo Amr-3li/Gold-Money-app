@@ -45,11 +45,7 @@ class BottomNavigationWidget extends StatelessWidget {
                   icon: Icons.currency_exchange,
                   text: 'Currencies',
                   textColor: Color.fromARGB(255, 255, 255, 255)),
-              GButton(
-                  icon: Icons.calculate,
-                  iconSize: 25,
-                  text: 'Zakah',
-                  textColor: Color.fromARGB(255, 255, 255, 255)),
+             
             ],
           ),
         ),
