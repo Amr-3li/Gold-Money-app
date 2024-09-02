@@ -14,10 +14,25 @@ class SimmerGoldPage extends StatelessWidget {
     return Shimmer.fromColors(
         baseColor: Colors.grey.withOpacity(0.3),
         highlightColor: const Color.fromARGB(255, 213, 213, 213),
-        child: Container(
-          height: hight / 2,
-          width: double.infinity,
-          color: Colors.amber,
+        child: Column(
+          children: [
+            const SizedBox(height: 20),
+            Container(
+              height: hight / 10,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  color: Colors.amber, borderRadius: BorderRadius.circular(20)),
+            ),
+            const SizedBox(
+              height: 20
+            ),
+            Container(
+              height: hight / 2,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  color: Colors.amber, borderRadius: BorderRadius.circular(20)),
+            ),
+          ],
         ));
   }
 }

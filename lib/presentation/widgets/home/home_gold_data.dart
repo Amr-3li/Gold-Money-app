@@ -20,8 +20,7 @@ class HomeGolddata extends StatelessWidget {
             text: "gold 21  :   ",
             price:
                 "${((state.gold.rate.price / 31.1035) * (21 / 24)).toString().substring(0, 7)}  EGP",
-            date:
-                "updated at  ${state.gold.timestamp.hour}:${state.gold.timestamp.minute} ",
+            date: "${state.gold.timestamp.hour}:${state.gold.timestamp.minute}",
           );
         } else {
           return Container();

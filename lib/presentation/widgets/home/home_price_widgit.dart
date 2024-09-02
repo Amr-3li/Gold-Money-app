@@ -41,7 +41,7 @@ class HomePriceWidget extends StatelessWidget {
             Align(
               alignment: Alignment.centerRight,
               child: Text(
-                date,
+                "updated at : ${date}",
                 style: const TextStyle(
                   color: Color.fromARGB(255, 255, 253, 250),
                   fontSize: 10,
