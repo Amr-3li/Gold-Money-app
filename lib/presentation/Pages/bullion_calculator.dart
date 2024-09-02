@@ -9,7 +9,16 @@ class BullionCalculator extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Bullion Calculator"),
       ),
-      body: Container(),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/Images/background/gold-bars.jpg"),
+            filterQuality: FilterQuality.low,
+            fit: BoxFit.fill,
+            opacity: 0.5,
+          ),
+        ),
+      ),
     );
   }
 }

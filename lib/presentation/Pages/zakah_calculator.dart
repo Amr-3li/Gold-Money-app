@@ -9,7 +9,15 @@ class ZakahCalculator extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Zakah Calculator"),
       ),
-      body: Container(),
+      body: Container(
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+          image: AssetImage("assets/Images/background/mosque.jpg"),
+          filterQuality: FilterQuality.low,
+          fit: BoxFit.fill,
+          opacity: 0.5,
+        )),
+      ),
     );
   }
 }
