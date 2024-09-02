@@ -14,13 +14,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      
       title: 'Flutter Demo',
-      theme: ThemeData(
-        brightness: Brightness.dark,
-        fontFamily: "jost"
-      ),
-      
+      theme: ThemeData(brightness: Brightness.dark, fontFamily: "jost"),
       debugShowCheckedModeBanner: false,
       home: const BottomNavigationBarWidget(),
     );

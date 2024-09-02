@@ -9,18 +9,15 @@ class HomeTextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      width: double.infinity,
-      child: Expanded(
-        child: Text(
-          "hello , welcome to gold price app",
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-            color: const Color.fromARGB(255, 9, 241, 0).withOpacity(0.4),
-          ),
-          overflow: TextOverflow.ellipsis,
-          maxLines: 3,
+      child: Text(
+        "hello , welcome to gold price app",
+        style: const TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+          color: Color.fromARGB(255, 9, 241, 0),
         ),
+        overflow: TextOverflow.ellipsis,
+        maxLines: 3,
       ),
     );
   }

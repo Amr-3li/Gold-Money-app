@@ -37,7 +37,6 @@ class _HomeBodyState extends State<HomeBody> {
 
   @override
   Widget build(BuildContext context) {
-   
     return SingleChildScrollView(
       padding: const EdgeInsets.all(20),
       scrollDirection: Axis.vertical,
@@ -52,7 +51,7 @@ class _HomeBodyState extends State<HomeBody> {
           const HomeCurrenciesData(),
           const SizedBox(height: 20),
           HomeItemPage(
-            image: "assets/Images/calculations.png",
+            image: "assets/Images/mosque.jpg",
             title: "Zakah Calculator",
             route: () {
               Navigator.push(
@@ -71,7 +70,7 @@ class _HomeBodyState extends State<HomeBody> {
           ),
           const SizedBox(height: 20),
           HomeItemPage(
-            image: "assets/Images/gold-bars.png",
+            image: "assets/Images/gold-bars.jpg",
             title: "gold bar price",
             route: () {
               Navigator.push(

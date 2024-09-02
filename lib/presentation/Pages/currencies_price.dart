@@ -5,8 +5,11 @@ class CurrenciesPrice extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double hight = MediaQuery.of(context).size.height;
     return Scaffold(
-       body: Container(),
+      backgroundColor: Colors.transparent,
+     
     );
   }
 }

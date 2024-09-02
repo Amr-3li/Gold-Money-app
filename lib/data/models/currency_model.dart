@@ -4,6 +4,7 @@ class CurrencyModel {
   final String base;
   final Currencies results;
   final DateTime updated;
+  
 
   CurrencyModel({
     required this.base,

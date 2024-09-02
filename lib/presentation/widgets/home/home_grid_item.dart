@@ -17,29 +17,22 @@ class HomeItemPage extends StatelessWidget {
         width: double.infinity,
         height: 200,
         decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage(image), fit: BoxFit.fill, opacity: 0.5),
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: Colors.black, width: 2),
+          border: Border.all(
+              color: const Color.fromARGB(255, 150, 150, 150), width: 2),
           color: const Color.fromARGB(255, 148, 94, 1).withOpacity(0.5),
         ),
-        child: Column(
-          children: [
-            const Spacer(flex: 1),
-            Image.asset(
-              image,
-              height: 70,
-              width: 70,
-              color: const Color.fromARGB(255, 255, 253, 250),
+        child: Center(
+          child: Text(
+            title,
+            style: const TextStyle(
+              color: Color.fromARGB(255, 255, 255, 255),
+              fontSize: 35,
+              fontWeight: FontWeight.bold,
             ),
-            const Spacer(flex: 1),
-            Text(
-              title,
-              style: const TextStyle(
-                color: Color.fromARGB(255, 255, 253, 250),
-                fontSize: 15,
-              ),
-            ),
-            const Spacer(flex: 1),
-          ],
+          ),
         ),
       ),
     );

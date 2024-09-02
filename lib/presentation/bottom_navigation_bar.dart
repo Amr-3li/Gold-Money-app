@@ -6,7 +6,6 @@ import 'package:gold/data/wep_sevices/gold_wep_services.dart';
 import 'package:gold/presentation/Pages/currencies_price.dart';
 import 'package:gold/presentation/Pages/gold_price.dart';
 import 'package:gold/presentation/Pages/home_page.dart';
-import 'package:gold/presentation/Pages/zakah_calculator.dart';
 import 'package:gold/presentation/widgets/bottom_navigation_widget.dart';
 import 'package:gold/presentation/widgets/home/home_appbar.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -38,7 +37,6 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
     const HomePage(),
     const GoldPrice(),
     const CurrenciesPrice(),
-    
   ];
 
   @override
@@ -46,16 +44,24 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
     return Scaffold(
       appBar: const PreferredSize(
           preferredSize: Size.fromHeight(60), child: HomeAppBar()),
-      body: MultiBlocProvider(
-        providers: [
-          BlocProvider(
-              create: (context) =>
-                  CurrenciesCubit(GoldRepository(GoldWepServices()))),
-          BlocProvider(
-              create: (context) =>
-                  GoldCubit(GoldRepository(GoldWepServices()))),
-        ],
-        child: _widgetOptions[_selectedIndex],
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("assets/Images/background.jpg"),
+              fit: BoxFit.fill,
+              opacity: 0.6),
+        ),
+        child: MultiBlocProvider(
+          providers: [
+            BlocProvider(
+                create: (context) =>
+                    CurrenciesCubit(GoldRepository(GoldWepServices()))),
+            BlocProvider(
+                create: (context) =>
+                    GoldCubit(GoldRepository(GoldWepServices()))),
+          ],
+          child: _widgetOptions[_selectedIndex],
+        ),
       ),
       bottomNavigationBar: BottomNavigationWidget(
         onItemTapped: onItemTapped,

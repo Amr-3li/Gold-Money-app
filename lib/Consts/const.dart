@@ -1,0 +1,2 @@
+int? hight;
+int? width;
