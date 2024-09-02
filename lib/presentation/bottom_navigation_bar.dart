@@ -47,7 +47,7 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/Images/background.jpg"),
+              image: AssetImage("assets/Images/background/background.jpg"),
               fit: BoxFit.fill,
               opacity: 0.6),
         ),

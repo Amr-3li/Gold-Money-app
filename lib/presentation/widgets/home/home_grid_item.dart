@@ -18,7 +18,10 @@ class HomeItemPage extends StatelessWidget {
         height: 200,
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage(image), fit: BoxFit.fill, opacity: 0.5),
+              filterQuality: FilterQuality.low,
+              image: AssetImage(image),
+              fit: BoxFit.fill,
+              opacity: 0.5),
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
               color: const Color.fromARGB(255, 150, 150, 150), width: 2),

@@ -51,7 +51,7 @@ class _HomeBodyState extends State<HomeBody> {
           const HomeCurrenciesData(),
           const SizedBox(height: 20),
           HomeItemPage(
-            image: "assets/Images/mosque.jpg",
+            image: "assets/Images/background/mosque.jpg",
             title: "Zakah Calculator",
             route: () {
               Navigator.push(
@@ -70,7 +70,7 @@ class _HomeBodyState extends State<HomeBody> {
           ),
           const SizedBox(height: 20),
           HomeItemPage(
-            image: "assets/Images/gold-bars.jpg",
+            image: "assets/Images/background/gold-bars.jpg",
             title: "gold bar price",
             route: () {
               Navigator.push(

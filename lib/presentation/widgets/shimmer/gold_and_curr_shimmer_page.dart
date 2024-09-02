@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
-class SimmerGoldPage extends StatelessWidget {
-  const SimmerGoldPage({
+class ShimmerGoldAndCurrenciesPage extends StatelessWidget {
+  const ShimmerGoldAndCurrenciesPage({
     super.key,
     required this.hight,
   });

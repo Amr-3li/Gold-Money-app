@@ -10,35 +10,41 @@ class GoldPriceContent extends StatelessWidget {
   final GoldModel gold;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const SizedBox(height: 20),
-        const Text("Hello,  ", style: TextStyle(fontSize: 20)),
-        const SizedBox(height: 5),
-        Text(
-            "This data updated at ${gold.timestamp.day}/${gold.timestamp.month} , ${gold.timestamp.hour}:${gold.timestamp.minute} AM",
-            style: const TextStyle(fontSize: 20)),
-        const SizedBox(height: 30),
-        HomePriceWidget(
-            text: "An ounce of gold : ",
-            price: gold.rate.price.toString(),
-            date: "${gold.timestamp.hour}:${gold.timestamp.minute}"),
-        const SizedBox(height: 20),
-        GoldPriceTable(gold: gold),
-        const SizedBox(height: 30),
-        Align(
-          alignment: AlignmentDirectional.center,
-          child: ElevatedButton.icon(
-              style: const ButtonStyle(
-                  backgroundColor:
-                      WidgetStatePropertyAll(Color.fromARGB(108, 175, 105, 0))),
-              onPressed: () {
-                BlocProvider.of<GoldCubit>(context).getGoldPrice();
-              },
-              label: const Icon(Icons.loop)),
-        )
-      ],
+    return SingleChildScrollView(
+      physics: const BouncingScrollPhysics(),
+      scrollDirection: Axis.vertical,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(height: 20),
+          const Text("Hello,  ", style: TextStyle(fontSize: 20)),
+          const SizedBox(height: 5),
+          Text(
+              "This data updated at ${gold.timestamp.day}/${gold.timestamp.month} , ${gold.timestamp.hour}:${gold.timestamp.minute} AM",
+              style: const TextStyle(fontSize: 20, color: Colors.green)),
+          const SizedBox(height: 5),
+          const Text("All prices per EGP ", style: TextStyle(fontSize: 20)),
+          const SizedBox(height: 30),
+          HomePriceWidget(
+              text: "An ounce of gold : ",
+              price: gold.rate.price.toString(),
+              date: "${gold.timestamp.hour}:${gold.timestamp.minute}"),
+          const SizedBox(height: 20),
+          GoldPriceTable(gold: gold),
+          const SizedBox(height: 30),
+          Align(
+            alignment: AlignmentDirectional.center,
+            child: ElevatedButton.icon(
+                style: const ButtonStyle(
+                    backgroundColor: WidgetStatePropertyAll(
+                        Color.fromARGB(108, 175, 105, 0))),
+                onPressed: () {
+                  BlocProvider.of<GoldCubit>(context).getGoldPrice();
+                },
+                label: const Icon(Icons.loop)),
+          )
+        ],
+      ),
     );
   }
 }

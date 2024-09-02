@@ -30,6 +30,12 @@ class Currencies {
   final double SAR;
   final double RUB;
   final double OMR;
+  final double QAR;
+  final double SDG;
+  final double CNY;
+  final double JPY;
+  
+  
 
   Currencies({
     required this.EUR,
@@ -40,6 +46,11 @@ class Currencies {
     required this.SAR,
     required this.RUB,
     required this.OMR,
+    required this.QAR,
+    required this.SDG,
+    required this.CNY,
+    required this.JPY,
+    
   });
 
   factory Currencies.fromJson(Map<String, dynamic> json) {
@@ -52,6 +63,10 @@ class Currencies {
       SAR: json['SAR'],
       RUB: json['RUB'],
       OMR: json['OMR'],
+      QAR: json['QAR'],
+      SDG: json['SDG'],
+      CNY: json['CNY'],
+      JPY: json['JPY'],
     );
   }
 }

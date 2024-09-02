@@ -6,8 +6,10 @@ class HomePriceWidget extends StatelessWidget {
     required this.text,
     required this.price,
     required this.date,
+    this.image,
   });
   final String text, price, date;
+  final String? image;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,22 +24,40 @@ class HomePriceWidget extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
+            image == null
+                ? Container()
+                : Align(
+                    alignment: Alignment.topRight,
+                    child: ClipOval(
+                      child: Image.asset(
+                        image!,
+                        width: 30,
+                        height: 30,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  ),
+            const SizedBox(height: 10),
             Row(
               children: [
                 Text(
                   text,
                   style: const TextStyle(
                       color: Color.fromARGB(255, 255, 253, 250),
-                      fontSize: 15,
+                      fontSize: 20,
                       fontWeight: FontWeight.normal),
                 ),
-                Text(price,
-                    style: const TextStyle(
-                        color: Color.fromARGB(255, 255, 253, 250),
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold)),
+                Expanded(
+                  child: Text(price,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                          color: Color.fromARGB(255, 255, 253, 250),
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold)),
+                ),
               ],
             ),
+            SizedBox(height: 10),
             Align(
               alignment: Alignment.centerRight,
               child: Text(
