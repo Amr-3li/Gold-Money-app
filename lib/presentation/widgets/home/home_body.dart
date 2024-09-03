@@ -58,11 +58,7 @@ class _HomeBodyState extends State<HomeBody> {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return BlocProvider(
-                      create: (context) =>
-                          CurrenciesCubit(GoldRepository(GoldWepServices())),
-                      child: const ZakahCalculator(),
-                    );
+                    return const ZakahCalculator();
                   },
                 ),
               );
