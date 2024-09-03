@@ -20,10 +20,11 @@ class ZakahCalculator extends StatelessWidget {
           image: AssetImage("assets/Images/background/mosque.jpg"),
           filterQuality: FilterQuality.low,
           fit: BoxFit.fill,
-          opacity: 0.55,
+          opacity: 0.5,
         )),
         child: BlocProvider(
-          create: (context) => GoldCubit(GoldRepository(GoldWepServices()))..getGoldPrice(),
+          create: (context) =>
+              GoldCubit(GoldRepository(GoldWepServices()))..getGoldPrice(),
           child: const ZakahCalculatorBody(),
         ),
       ),
