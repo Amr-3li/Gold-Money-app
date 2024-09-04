@@ -4,7 +4,7 @@ import 'package:gold/cubit/currencies/currencies_cubit.dart';
 import 'package:gold/cubit/gold/gold_cubit.dart';
 import 'package:gold/data/repository/gold_repo.dart';
 import 'package:gold/data/wep_sevices/gold_wep_services.dart';
-import 'package:gold/presentation/Pages/bullion_calculator.dart';
+import 'package:gold/presentation/Pages/gold_bars_calculator.dart';
 import 'package:gold/presentation/Pages/zakah_calculator.dart';
 import 'package:gold/presentation/widgets/home/home_currencies_data.dart';
 import 'package:gold/presentation/widgets/home/home_gold_data.dart';
@@ -76,7 +76,7 @@ class _HomeBodyState extends State<HomeBody> {
                     return BlocProvider(
                       create: (context) =>
                           CurrenciesCubit(GoldRepository(GoldWepServices())),
-                      child: const BullionCalculator(),
+                      child: const GoldBarCalculator(),
                     );
                   },
                 ),

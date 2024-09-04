@@ -5,7 +5,7 @@ class BottomNavigationWidget extends StatelessWidget {
   const BottomNavigationWidget(
       {super.key, required this.onItemTapped, required this.selectedIndex});
   final void Function(int)? onItemTapped;
-  final int selectedIndex ;
+  final int selectedIndex;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -37,15 +37,14 @@ class BottomNavigationWidget extends StatelessWidget {
                   text: 'Home',
                   textColor: Color.fromARGB(255, 255, 255, 255)),
               GButton(
-                icon: Icons.attach_money_rounded,
+                icon: Icons.monetization_on_rounded,
                 text: 'gold price',
                 textColor: Color.fromARGB(255, 255, 255, 255),
               ),
               GButton(
-                  icon: Icons.currency_exchange,
+                  icon: Icons.currency_exchange_sharp,
                   text: 'Currencies',
                   textColor: Color.fromARGB(255, 255, 255, 255)),
-             
             ],
           ),
         ),

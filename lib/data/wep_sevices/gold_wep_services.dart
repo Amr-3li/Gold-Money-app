@@ -14,7 +14,7 @@ class GoldWepServices {
 
   Future<Response> getGoldPrice() async {
     final response = await dio!.get(
-        'https://api.metals.dev/v1/metal/spot?api_key=TYKLPK5P7TXBLLSJBMSL938SJBMSL&metal=gold&currency=EGP');
+        'https://api.metals.dev/v1/metal/spot?api_key=KPYEWJVMWICVORFAMHC6318FAMHC6&metal=gold&currency=EGP');
     return response;
   }
 }

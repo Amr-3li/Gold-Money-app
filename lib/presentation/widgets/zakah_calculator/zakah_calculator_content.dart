@@ -101,7 +101,7 @@ class _ZakahCalculatorContentState extends State<ZakahCalculatorContent> {
                       )
                     : ResultText(
                         result:
-                            " ${zakahCalculator().toString().substring(0, 8)}",
+                            "Zakah : ${zakahCalculator().toString().substring(0, 8)}  EGP",
                       ),
             const SizedBox(height: 20),
             const ZakahInformation()
@@ -140,9 +140,7 @@ class _ZakahCalculatorContentState extends State<ZakahCalculatorContent> {
         ),
       ],
       onChanged: (value) {
-        setState(() {
-          caliber = value!;
-        });
+        caliber = value!;
       },
     );
   }

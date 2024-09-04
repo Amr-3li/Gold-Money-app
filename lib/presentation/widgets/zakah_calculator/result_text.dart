@@ -4,8 +4,10 @@ class ResultText extends StatelessWidget {
   const ResultText({
     super.key,
     required this.result,
+    this.color,
   });
   final String result;
+  final Color? color;
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -14,14 +16,19 @@ class ResultText extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           border: Border.all(
-              color: const Color.fromARGB(255, 47, 163, 51), width: 2),
+              color: color == null
+                  ? const Color.fromARGB(255, 47, 163, 51)
+                  : color!,
+              width: 2),
           borderRadius: BorderRadius.circular(10),
         ),
         child: Text(
-          "Zakah : $result EGP",
-          style: const TextStyle(
+          " $result ",
+          style: TextStyle(
               fontSize: 25,
-              color: Color.fromARGB(255, 47, 163, 51),
+              color: color == null
+                  ? const Color.fromARGB(255, 47, 163, 51)
+                  : color!,
               fontWeight: FontWeight.bold),
         ),
       ),
