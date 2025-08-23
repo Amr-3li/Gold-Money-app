@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gold/cubit/gold/gold_cubit.dart';
 import 'package:gold/presentation/widgets/zakah_calculator/zakah_calculator_content.dart';
+import 'package:lottie/lottie.dart';
 
 class ZakahCalculatorBody extends StatefulWidget {
   const ZakahCalculatorBody({super.key});
@@ -23,7 +24,13 @@ class _ZakahCalculatorBodyState extends State<ZakahCalculatorBody> {
         } else if (state is GoldLoaded) {
           return ZakahCalculatorContent(goldprice: state.gold.rate.price);
         } else {
-          return const Center();
+          return Center(
+            child: Lottie.asset(
+              'assets/animations/error.json',
+              height: MediaQuery.of(context).size.height * 0.3,
+              fit: BoxFit.cover,
+            ),
+          );
         }
       },
     );

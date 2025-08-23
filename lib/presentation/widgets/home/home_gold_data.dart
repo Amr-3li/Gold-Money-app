@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gold/cubit/gold/gold_cubit.dart';
 import 'package:gold/presentation/widgets/home/home_price_widgit.dart';
 import 'package:gold/presentation/widgets/shimmer/home_shimmer.dart';
+import 'package:lottie/lottie.dart';
 
 class HomeGolddata extends StatelessWidget {
   const HomeGolddata({
@@ -23,7 +24,13 @@ class HomeGolddata extends StatelessWidget {
             date: "${state.gold.timestamp.hour}:${state.gold.timestamp.minute}",
           );
         } else {
-          return Container();
+          return Center(
+            child: Lottie.asset(
+              'assets/animations/error.json',
+              height: MediaQuery.of(context).size.height * 0.3,
+              fit: BoxFit.cover,
+            ),
+          );
         }
       },
     );

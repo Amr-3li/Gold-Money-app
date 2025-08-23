@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gold/cubit/gold/gold_cubit.dart';
 import 'package:gold/presentation/widgets/gold_bars_calculator/gold_bar_calc_content.dart';
+import 'package:lottie/lottie.dart';
 
 class GoldBarCalculatorBody extends StatefulWidget {
   const GoldBarCalculatorBody({super.key});
@@ -30,9 +31,10 @@ class _GoldBarCalculatorBodyState extends State<GoldBarCalculatorBody> {
           return GoldBarCalculatorContent(goldPrice: state.gold.rate.price);
         } else if (state is GoldError) {
           return Center(
-            child: Text(
-              state.error,
-              style: const TextStyle(color: Colors.red, fontSize: 18),
+            child: Lottie.asset(
+              'assets/animations/error.json',
+              height: MediaQuery.of(context).size.height * 0.3,
+              fit: BoxFit.cover,
             ),
           );
         } else {

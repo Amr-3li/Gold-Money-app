@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gold/cubit/gold/gold_cubit.dart';
 import 'package:gold/presentation/widgets/gold_price/gold_price_contetent.dart';
 import 'package:gold/presentation/widgets/shimmer/gold_and_curr_shimmer_page.dart';
+import 'package:lottie/lottie.dart';
 
 class GoldPriceBody extends StatelessWidget {
   const GoldPriceBody({
@@ -31,7 +32,9 @@ class GoldPriceBody extends StatelessWidget {
             ),
           );
         } else {
-          return const Center();
+          return Center(
+            child: Lottie.asset('assets/animations/error.json'),
+          );
         }
       },
     );

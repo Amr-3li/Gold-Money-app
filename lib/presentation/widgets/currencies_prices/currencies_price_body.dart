@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gold/cubit/currencies/currencies_cubit.dart';
 import 'package:gold/presentation/widgets/currencies_prices/currencies_price_content.dart';
 import 'package:gold/presentation/widgets/shimmer/gold_and_curr_shimmer_page.dart';
+import 'package:lottie/lottie.dart';
 import 'package:shimmer/shimmer.dart';
 
 class CurrenciesPriceBody extends StatelessWidget {
@@ -27,9 +28,10 @@ class CurrenciesPriceBody extends StatelessWidget {
           return CurrenciesPriceContent(currencies: state.currencies);
         } else if (state is CurrenciesError) {
           return Center(
-            child: Text(
-              state.error,
-              style: const TextStyle(color: Colors.red, fontSize: 18),
+            child: Lottie.asset(
+              'assets/animations/error.json',
+              height: hight * 0.3,
+              fit: BoxFit.cover,
             ),
           );
         } else {

@@ -2,7 +2,7 @@ name: gold
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.4.4 <4.0.0'
+  sdk: ">=3.4.4 <4.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -34,6 +34,7 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^8.1.6
   google_nav_bar: ^5.0.6
+  lottie: ^3.3.1
   shimmer: ^3.0.0
 
 dev_dependencies:
@@ -45,7 +46,6 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -54,6 +54,7 @@ flutter:
   assets:
     - assets/Images/background/
     - assets/Images/flags/
+    - assets/animations/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see
@@ -67,8 +68,31 @@ flutter:
     - family: jost
       fonts:
         - asset: assets/fonts/Jost-VariableFont_wght.ttf
-        
-    
-  
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+# flutter_assets:
+#   assets_path:
+#     - assets/icons/
+#   output_path: lib/core/constants/
+#   filename: icons.dart
+#   field_prefix:
+#   classname: MyIcons
+#   ignore_comments: true
+# flutter_assets:
+#   assets_path:
+#     - assets/Images/background
+#     - assets/Images/flags/
+#   output_path: lib/Consts/
+#   filename: images.dart
+#   field_prefix: null
+#   classname: MyImages
+#   ignore_comments: true
+flutter_assets:
+  assets_path:
+    - assets/animations/
+  output_path: lib/Consts/
+  filename: animations.dart
+  field_prefix:
+  classname: MyAnimation
+  ignore_comments: true
