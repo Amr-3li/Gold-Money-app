@@ -1,20 +1,44 @@
 import 'package:dio/dio.dart';
+import 'package:gold/Consts/secret.dart';
 
 class GoldWepServices {
-  Dio? dio;
-  GoldWepServices() {
-    dio = Dio();
+  final Dio _dio;
+
+  GoldWepServices() : _dio = Dio(_dioOptions);
+
+  static final BaseOptions _dioOptions = BaseOptions(
+    connectTimeout: const Duration(seconds: 30),
+    receiveTimeout: const Duration(seconds: 30),
+    sendTimeout: const Duration(seconds: 30),
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+  );
+
+  Future<Response<dynamic>> getCurrenciesRate() async {
+    const params = {
+      'api_key': Secret.currencyApiKey,
+      'from': 'EGP',
+      'to': 'EUR,KWD,GBP,USD,AED,SAR,RUB,OMR,QAR,SDG,CNY,JPY',
+    };
+
+    return await _dio.get(
+      '${Secret.baseCurrencyApiUrl}${Secret.endpointOfCurrency}',
+      queryParameters: params,
+    );
   }
 
-  Future<Response> getCurrenciesRate() async {
-    final response = await dio!.get(
-        'https://api.fastforex.io/fetch-multi?api_key=5a67f57012-475d620173-six0jb&from=EGP&to=EUR,KWD,GBP,USD,AED,SAR,RUB,OMR,QAR,SDG,CNY,JPY');
-    return response;
-  }
+  Future<Response<dynamic>> getGoldPrice() async {
+    const params = {
+      'api_key': Secret.metalApiKey,
+      'metal': 'gold',
+      'currency': 'EGP',
+    };
 
-  Future<Response> getGoldPrice() async {
-    final response = await dio!.get(
-        'https://api.metals.dev/v1/metal/spot?api_key=KPYEWJVMWICVORFAMHC6318FAMHC6&metal=gold&currency=EGP');
-    return response;
+    return await _dio.get(
+      '${Secret.baseMetalApiUrl}${Secret.endpointOfMetal}',
+      queryParameters: params,
+    );
   }
 }
