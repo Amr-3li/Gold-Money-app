@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gold/Consts/animations.dart';
 import 'package:gold/cubit/gold/gold_cubit.dart';
 import 'package:gold/presentation/widgets/gold_price/gold_price_contetent.dart';
 import 'package:gold/presentation/widgets/shimmer/gold_and_curr_shimmer_page.dart';
@@ -33,7 +34,11 @@ class GoldPriceBody extends StatelessWidget {
           );
         } else {
           return Center(
-            child: Lottie.asset('assets/animations/error.json'),
+            child: Lottie.asset(
+              MyAnimation.animationsError404,
+              height: MediaQuery.of(context).size.height * 0.3,
+              fit: BoxFit.cover,
+            ),
           );
         }
       },

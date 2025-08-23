@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gold/Consts/images.dart';
 import 'package:gold/cubit/currencies/currencies_cubit.dart';
 import 'package:gold/cubit/gold/gold_cubit.dart';
 import 'package:gold/data/repository/gold_repo.dart';
@@ -51,7 +52,7 @@ class _HomeBodyState extends State<HomeBody> {
           const HomeCurrenciesData(),
           const SizedBox(height: 20),
           HomeItemPage(
-            image: "assets/Images/background/mosque.jpg",
+            image: MyImages.imagesBackgroundMosque,
             title: "Zakah Calculator",
             route: () {
               Navigator.push(
@@ -66,7 +67,7 @@ class _HomeBodyState extends State<HomeBody> {
           ),
           const SizedBox(height: 20),
           HomeItemPage(
-            image: "assets/Images/background/gold-bars.jpg",
+            image: MyImages.imagesBackgroundGoldBars,
             title: "gold bar price",
             route: () {
               Navigator.push(

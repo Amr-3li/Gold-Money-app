@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gold/Consts/images.dart';
 import 'package:gold/cubit/currencies/currencies_cubit.dart';
 import 'package:gold/data/models/currency_model.dart';
 import 'package:gold/presentation/widgets/home/home_price_widgit.dart';
@@ -14,73 +15,73 @@ class CurrenciesPriceContent extends StatelessWidget {
         "Text": "dollar :   ",
         "price": (1 / currencies.results.USD).toString().substring(0, 6),
         "date": "${currencies.updated.hour}:${currencies.updated.minute}",
-        "image": "assets/Images/flags/usa.png"
+        "image": MyImages.imagesFlagsUsa
       },
       {
         "Text": "Euro :   ",
         "price": (1 / currencies.results.EUR).toString().substring(0, 6),
         "date": "${currencies.updated.hour}:${currencies.updated.minute}",
-        "image": "assets/Images/flags/auro.png"
+        "image": MyImages.imagesFlagsAuro
       },
       {
         "Text": "Pound :   ",
         "price": (1 / currencies.results.GBP).toString().substring(0, 6),
         "date": "${currencies.updated.hour}:${currencies.updated.minute}",
-        "image": "assets/Images/flags/emgltra.png"
+        "image": MyImages.imagesFlagsEmgltra
       },
       {
         "Text": "Yen :   ",
         "price": (1 / currencies.results.JPY).toString().substring(0, 6),
         "date": "${currencies.updated.hour}:${currencies.updated.minute}",
-        "image": "assets/Images/flags/jaban.png"
+        "image": MyImages.imagesFlagsJaban
       },
       {
         "Text": "Rial :   ",
         "price": (1 / currencies.results.OMR).toString().substring(0, 6),
         "date": "${currencies.updated.hour}:${currencies.updated.minute}",
-        "image": "assets/Images/flags/oman.png"
+        "image": MyImages.imagesFlagsOman
       },
       {
         "Text": "Yuan :   ",
         "price": (1 / currencies.results.CNY).toString().substring(0, 6),
         "date": "${currencies.updated.hour}:${currencies.updated.minute}",
-        "image": "assets/Images/flags/china.png"
+        "image": MyImages.imagesFlagsChina
       },
       {
         "Text": "Dirham :   ",
         "price": (1 / currencies.results.AED).toString().substring(0, 6),
         "date": "${currencies.updated.hour}:${currencies.updated.minute}",
-        "image": "assets/Images/flags/UAE.png"
+        "image": MyImages.imagesFlagsUAE
       },
       {
         "Text": "Dinar :   ",
         "price": (1 / currencies.results.KWD).toString().substring(0, 6),
         "date": "${currencies.updated.hour}:${currencies.updated.minute}",
-        "image": "assets/Images/flags/kwit.png"
+        "image": MyImages.imagesFlagsKwit
       },
       {
         "Text": "Ruble :   ",
         "price": (1 / currencies.results.RUB).toString().substring(0, 6),
         "date": "${currencies.updated.hour}:${currencies.updated.minute}",
-        "image": "assets/Images/flags/russia.png"
+        "image": MyImages.imagesFlagsRussia
       },
       {
         "Text": "Rial Saudi :   ",
         "price": (1 / currencies.results.SAR).toString().substring(0, 6),
         "date": "${currencies.updated.hour}:${currencies.updated.minute}",
-        "image": "assets/Images/flags/sud.png"
+        "image": MyImages.imagesFlagsSud
       },
       {
         "Text": "Pound Sudan :   ",
         "price": (1 / currencies.results.SDG).toString().substring(0, 6),
         "date": "${currencies.updated.hour}:${currencies.updated.minute}",
-        "image": "assets/Images/flags/sodan.png"
+        "image": MyImages.imagesFlagsSodan
       },
       {
         "Text": "Qatar :   ",
         "price": (1 / currencies.results.QAR).toString().substring(0, 6),
         "date": "${currencies.updated.hour}:${currencies.updated.minute}",
-        "image": "assets/Images/flags/qatar.png"
+        "image": MyImages.imagesFlagsQatar
       },
     ];
     return SingleChildScrollView(

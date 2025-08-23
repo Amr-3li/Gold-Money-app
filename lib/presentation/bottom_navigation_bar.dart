@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gold/Consts/images.dart';
 import 'package:gold/cubit/currencies/currencies_cubit.dart';
 import 'package:gold/cubit/gold/gold_cubit.dart';
 import 'package:gold/data/repository/gold_repo.dart';
@@ -47,7 +48,7 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/Images/background/background.jpg"),
+              image: AssetImage(MyImages.imagesBackgroundBackground),
               fit: BoxFit.fill,
               opacity: 0.6),
         ),

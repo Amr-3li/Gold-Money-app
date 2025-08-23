@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gold/Consts/animations.dart';
 import 'package:gold/cubit/currencies/currencies_cubit.dart';
 import 'package:gold/presentation/widgets/currencies_prices/currencies_price_content.dart';
 import 'package:gold/presentation/widgets/shimmer/gold_and_curr_shimmer_page.dart';
@@ -29,7 +30,7 @@ class CurrenciesPriceBody extends StatelessWidget {
         } else if (state is CurrenciesError) {
           return Center(
             child: Lottie.asset(
-              'assets/animations/error.json',
+              MyAnimation.animationsError404,
               height: hight * 0.3,
               fit: BoxFit.cover,
             ),

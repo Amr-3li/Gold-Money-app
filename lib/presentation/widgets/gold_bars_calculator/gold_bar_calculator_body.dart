@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gold/Consts/animations.dart';
 import 'package:gold/cubit/gold/gold_cubit.dart';
 import 'package:gold/presentation/widgets/gold_bars_calculator/gold_bar_calc_content.dart';
 import 'package:lottie/lottie.dart';
@@ -32,7 +33,7 @@ class _GoldBarCalculatorBodyState extends State<GoldBarCalculatorBody> {
         } else if (state is GoldError) {
           return Center(
             child: Lottie.asset(
-              'assets/animations/error.json',
+              MyAnimation.animationsError404,
               height: MediaQuery.of(context).size.height * 0.3,
               fit: BoxFit.cover,
             ),
