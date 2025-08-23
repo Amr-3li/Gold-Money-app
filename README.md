@@ -32,7 +32,7 @@
   </table>
 </div>
 
-
+---
 ## ✨ Features
 ### 📊 Real-time Market Data
 - Live Gold Prices: Current gold rates per gram in EGP
@@ -78,25 +78,18 @@
 
 #### Architecture
 
-    lib/
-    ├── features/
-    │   ├── gold_price/
-    │   │   ├── data/
-    │   │   ├── domain/
-    │   │   └── presentation/
-    │   ├── currency/
-    │   │   ├── data/
-    │   │   ├── domain/
-    │   │   └── presentation/
-    │   └── zakat_calculator/
-    │       ├── data/
-    │       ├── domain/
-    │       └── presentation/
-    ├── core/
-    │   ├── services/
-    │   ├── utils/
-    │   └── themes/
-    └── injection_container.dart
+    lib
+    │── Consts
+    │── cubit
+    │── data
+    │   ├── models
+    │   ├── repository
+    │   └── wep_sevices
+    │── presentation
+    │   ├── Pages
+    │   └── widgets
+    │── main.dart
+
 ---
 
 ## 📊 API Integration
