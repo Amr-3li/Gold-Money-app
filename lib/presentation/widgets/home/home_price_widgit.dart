@@ -38,26 +38,26 @@ class HomePriceWidget extends StatelessWidget {
                     ),
                   ),
             const SizedBox(height: 10),
-            Row(
-              children: [
-                Text(
-                  text,
-                  style: const TextStyle(
-                      color: Color.fromARGB(255, 255, 253, 250),
-                      fontSize: 20,
-                      fontWeight: FontWeight.normal),
-                ),
-                Expanded(
-                  child: Text(price,
+            FittedBox(
+              child: Row(
+                children: [
+                  Text(
+                    text,
+                    style: const TextStyle(
+                        color: Color.fromARGB(255, 255, 253, 250),
+                        fontSize: 20,
+                        fontWeight: FontWeight.normal),
+                  ),
+                  Text(price,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
                           color: Color.fromARGB(255, 255, 253, 250),
                           fontSize: 20,
                           fontWeight: FontWeight.bold)),
-                ),
-              ],
+                ],
+              ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Align(
               alignment: Alignment.centerRight,
               child: Text(
