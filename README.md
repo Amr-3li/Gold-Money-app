@@ -19,13 +19,13 @@
         <br><b>Currencies prices</b>
       </td>     
     </tr>   
-      <tr>
+      <tr align="center">
       <td align="center">
-        <img src="readme_images/zakah.png" width="300" alt="Zakat Calculator">
+        <img src="readme_images/zakah.png" width="200" alt="Zakat Calculator">
         <br><b>Zakat Calculator</b>
       </td>
       <td align="center">
-        <img src="readme_images/bullion.png" width="300" alt="Bullion price">
+        <img src="readme_images/bullion.png" width="200" alt="Bullion price">
         <br><b>Bullion prices</b>
       </td>         
     </tr>   
